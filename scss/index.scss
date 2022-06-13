@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body,html{
+    background: url("../img/sun.jpg") fixed no-repeat center/100% 100%;
+    &::-webkit-scrollbar{
+        width: 10px;
+    }
+    &::-webkit-scrollbar-button{
+        background-color: transparent;
+    }
+    &::-webkit-scrollbar-track-piece{
+        background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb{
+        border-radius: 4px;
+        background-color: #ffc099;
+        border: 1px solid black;
+    }
+}
+.container {
+    max-width: 1200px;
+    box-sizing: border-box;
+    margin: 50px auto 0;
+    .top_bar {
+        .title {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #0c4497;
+        }
+        .search_bar {
+            position: relative;
+            width: 450px;
+            margin: 30px auto 0;
+            .search_item {
+                position: relative;
+                .search_input,
+                .search_btn {
+                    border: 0;
+                    padding: 10px;
+                    line-height: 20px;
+                    font-size: 1.5rem;
+                }
+                .search_input {
+                    width: 100%;
+                    box-sizing: border-box;
+                    background-color: #fee5dd;
+                    border-radius: 10px;
+                    outline: none;
+                    //改變下面border形狀
+                    &.change{
+                        border-radius: 10px 10px 0 0;
+                    }
+                }
+                .search_btn {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    background-color: transparent;
+                    cursor: pointer;
+                    color: #27a680;
+                }
+            }
+            .match_list {
+                width: 100%;
+                height: 141px;
+                overflow-y:auto;
+                box-sizing: border-box;
+                background-color: #ffc099;
+                border-radius: 0 0 10px 10px;
+                visibility: hidden;
+                &.show{
+                    visibility:visible;
+                }
+                &::-webkit-scrollbar{
+                    width: 10px;
+                }
+                &::-webkit-scrollbar-button{
+                    background-color: transparent;
+                    height: 5px;
+                }
+                &::-webkit-scrollbar-track-piece{
+                    background-color: transparent;
+                }
+                &::-webkit-scrollbar-thumb{
+                    border-radius: 4px;
+                    background-color: #ffc099;
+                    border: 1px solid black;
+                }
+                .match_value {
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 1.1rem;
+                    font-weight: 700;
+                    padding: 10px;
+                    cursor: pointer;
+                    border-bottom: 1px solid black;
+                    &:hover{
+                        background-color: #ff99c2;
+                    }
+                    .cityName{
+                        pointer-events: none;
+                    }
+                }
+            }
+        }
+    }
+    .weatherContent{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+        visibility: hidden;
+        padding: 20px;
+        width: 450px;
+        height: 300px;
+        margin: 100px auto 0;
+        border-radius: 20px;
+        background-color: #b5cef8;
+        &.show{
+            visibility:visible;
+        }
+        .content{
+            display: flex;
+            align-items: center;
+            .icon{
+                display: flex;
+                align-items: center;
+            }
+            .temp{
+                font-size: 3rem;
+                font-weight: 500;
+            }
+            .des{
+                margin-left: 4rem;
+                font-size: 1.2rem;
+                padding: 5px 0 ;
+            }
+        }
+        .detail{
+            display: flex;
+            justify-content: space-between;
+            .detail_item{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .num{
+                    font-size: 0.875rem;
+                }
+            }
+        }
+    }
+}
+.alert_message{
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #0048b5;
+    text-align: center;
+    padding: 5px;
+    box-sizing: border-box;
+    transition: 0.8s;
+    &.show{
+        top: 0;
+    }
+    .message{
+        font-weight: 400;
+        color: #f9dcc4;
+        line-height: 20px;
+    }
+}
+.loading{
+    position: fixed;
+    display:none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.6);
+    z-index: 1000;
+    text-align: center;
+    line-height: 100vh;
+    &.show{
+        display: block;
+    }
+}

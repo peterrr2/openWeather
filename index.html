@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>openWeather</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        />
+        <link rel="stylesheet" href="css/index.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="top_bar">
+                <div class="title">
+                    <h1>各國天氣搜尋</h1>
+                </div>
+                <div class="search_bar" id="search_bar">
+                    <div class="search_item">
+                        <input class="search_input" type="text" id="search_input">
+                        <button class="search_btn" id="search_btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="match_list" id="match_list">
+                    </div>
+                </div>
+            </div>
+            <div class="weatherContent" id="weatherContent">
+            </div>
+        </div>
+        <div class="alert_message" id="alert_message">
+            <h1 class="message">country not find</h1>
+        </div>
+        <div class="loading" id="loading">
+            <img src="img/loading.gif" alt="loading_pic">
+        </div>
+    </body>
+    <script src="js/index.js"></script>
+</html>
